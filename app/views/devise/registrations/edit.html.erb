@@ -1,0 +1,96 @@
+<%= render "devise/header" %>
+<section>
+  <div id="page-wrapper" class="sign-in-wrapper">
+    <div class="graphs">
+      <div class="sign-in-form">
+        <div class="sign-in-form-top">
+          <h1>Update your Account</h1>
+        </div>
+        <%= devise_error_messages! %>
+        <div class="signin">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.text_field :username, class: "user", value: current_user.username || "Username", onfocus: "if (this.value == 'Username') {this.value = ''}", onblur: "if (this.value == '') {this.value = 'Enter Username';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.email_field :email, class: "user", value: current_user.email || "Your Email", onfocus: "this.value = this.value;", onblur: "if (this.value == '') {this.value = 'Enter Your Email';}" %>
+              </div>
+              <div class="clearfix"> </div>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.text_field :first_name, class: "user", value: current_user.first_name || "First Name", onfocus: "if (this.value == 'First Name') {this.value = ''}", onblur: "if (this.value == '') {this.value = 'Your First Name';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.text_field :last_name, class: "user", value: current_user.last_name || "Last Name", onfocus: "if (this.value == 'Last Name') {this.value = ''}", onblur: "if (this.value == '') {this.value = 'Your Last Name';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.text_area :address, class: "address", value: current_user.address || "Address", onfocus: "if (this.value == 'Address') {this.value = ''}", onblur: "if (this.value == '') {this.value = 'Your Address';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.text_field :phone, class: "phone", value: current_user.phone || "Phone Number", onfocus: "if (this.value == 'Phone Number') {this.value = ''}", onblur: "if (this.value == '') {this.value = 'Your Phone Number';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <hr>
+            <h3 style="color: #f00;">Change Password?</h3>
+            <i>Leave this section blank if you don't want to change your password</i>
+            <br><br>
+            <div class="log-input">
+              <div class="log-input-left">
+                <% password_length = @minimum_password_length.to_s+' '+'characters min )' if @minimum_password_length || "" %>
+                <%= f.password_field :password, autocomplete: "off", class: "lock",  placeholder: "Enter new password ( "+password_length, onfocus: "this.value = '';", onblur:"if (this.value == '') {this.placeholder = 'Password Here';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <div class="log-input">
+              <div class="log-input-left">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "lock", placeholder: "Confirm new password", onfocus: "this.value = '';", onblur:"if (this.value == '') {this.placeholder = 'Confirm Password';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+            <hr>
+            <div class="log-input">
+              <div class="log-input-left">
+                <label><i>Enter Password to save changes <abbr title="We need your current password save changes" style="color: #f00;">(*)</abbr></i></label>
+                <%= f.password_field :current_password, autocomplete: "off", class: "lock", placeholder: "Current password", onfocus: "this.value = '';", onblur:"if (this.value == '') {this.placeholder = 'Password is required!';}" %>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+
+            <input type="submit" value="Update Account">
+          <% end %>
+
+
+        </div>
+        <div class="new_people">
+          <h2>Delete Account</h2>
+          <p>Do you want to remove your account from our database?</p>
+          <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--footer section start-->
+<footer class="diff">
+  <p class="text-center">&copy; 2017 Swapper. All Rights Reserved | Design by <a href="https://madsuite.com/" target="_blank">Madsuite Technologies.</a></p>
+</footer>
+<!--footer section end-->
+</section>

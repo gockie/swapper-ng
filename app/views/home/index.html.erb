@@ -1,0 +1,231 @@
+<%= render "layouts/header" %>
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1>Sell or Trade   <span class="segment-heading">    by BARTER </span> with Swapper</h1>
+            <p>The first trade by barter online system in Nigeria</p>
+            <a href="<%= new_product_path %>">Post Free Ad</a>
+        </div>
+    </div>
+    <!-- content-starts-here -->
+    <div class="content">
+        <div class="categories">
+            <div class="container white">
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Mobile")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-mobile"></i></div>
+                                <h4 class="clrchg">Mobiles</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Electronics")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-laptop"></i></div>
+                                <h4 class="clrchg"> Electronics & Appliances</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Cars")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-car"></i></div>
+                                <h4 class="clrchg">Cars</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Bikes")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-motorcycle"></i></div>
+                                <h4 class="clrchg">Bikes</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Furniture")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-wheelchair"></i></div>
+                                <h4 class="clrchg">Furnitures</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Pets")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-paw"></i></div>
+                                <h4 class="clrchg">Pets</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Books, Sports & Hobbies")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-book"></i></div>
+                                <h4 class="clrchg">Books, Sports & Hobbies</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Fashion")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+                                <h4 class="clrchg">Fashion</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Kids")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+                                <h4 class="clrchg">Kids</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Services")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-shield"></i></div>
+                                <h4 class="clrchg">Services</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Jobs")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-at"></i></div>
+                                <h4 class="clrchg">Jobs</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 focus-grid">
+                    <a href="<%= category_path(Category.find_by_title("Real Estate")) %>">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-home"></i></div>
+                                <h4 class="clrchg">Real Estate</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="trending-ads">
+            <div class="container white">
+                <!-- slider -->
+                <div class="trend-ads">
+                    <h2>Trending Ads</h2>
+                    <ul id="flexiselDemo3">
+                        <li>
+                            <% Product.limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                        <li>
+                            <% Product.offset(4).limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                        <li>
+                            <% Product.offset(8).limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                    </ul>
+                    <script type="text/javascript">
+                    $(window).load(function() {
+                        $("#flexiselDemo3").flexisel({
+                            visibleItems: 1,
+                            animationSpeed: 1000,
+                            autoPlay: true,
+                            autoPlaySpeed: 5000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                                portrait: {
+                                    changePoint: 480,
+                                    visibleItems: 1
+                                },
+                                landscape: {
+                                    changePoint: 640,
+                                    visibleItems: 1
+                                },
+                                tablet: {
+                                    changePoint: 768,
+                                    visibleItems: 1
+                                }
+                            }
+                        });
+
+                    });
+                    </script>
+                    <script type="text/javascript" src="/assets/jquery.flexisel.js"></script>
+                </div>
+            </div>
+            <!-- //slider -->
+        </div>
+        <div class="mobile-app">
+            <div class="container">
+                <div class="col-md-5 app-left">
+                    <a href="#"><img src="/assets/app.png" alt=""></a>
+                </div>
+                <div class="col-md-7 app-right">
+                    <h3>Swapper is the <span>Easiest</span> platform for trading in barter</h3>
+                    <p>It is the first ever e-commerce website based in nigeria to offer trade in the form of barter. It is user friendly, sensitive and easy to use. It provides adequate and neccessary tools needed for trade of any category or form. It's a one of a kind trade platform which is long over due necessary for business in nigeria.</p>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <%= render "layouts/footer" %>

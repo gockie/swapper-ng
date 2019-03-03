@@ -1,0 +1,29 @@
+<%= render "layouts/header" %>
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1>Sell or Trade   <span class="segment-heading">    by BARTER </span> with Swapper</h1>
+            <p>The first trade by barter online system in Nigeria</p>
+            <a href="<%= new_product_path %>">Post Free Ad</a>
+        </div>
+    </div>
+
+<!-- Faq -->
+  <div class="faq main-grid-border">
+    <div class="container">
+      <h2 class="head">Faqs</h2>
+      <dl class="faq-list">
+         <% @faqs.each do |faq| %>
+        <dt class="faq-list_h">
+        <h4 class="marker">Q?</h4>
+        <h5 class="marker_head"><%= faq.question %></h5>
+        </dt>
+        <dd>
+        <h4 class="marker1">A.</h4>
+        <p class="m_13"><%= faq.answer %></p>
+        </dd>
+        <% end %>    
+      </dl>
+    </div>  
+  </div>
+<!-- // Faq -->
+<%= render "layouts/footer" %>
