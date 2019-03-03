@@ -1,0 +1,67 @@
+<%= nested_form_for @product do |f| %>
+
+    <% if product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <label>Select Category <span>*</span></label>
+    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: "Select Category" %>
+    <div class="clearfix"></div>
+
+    <%= f.label :name, "Ad Title" %>
+    <%= f.text_field :name, placeholder: "Enter product name here" %>
+    <div class="clearfix"></div>
+    
+    <label>Ad Description <span>*</span></label>
+    <%= f.text_area :description, placeholder: "Write few lines about your product" %>
+    <div class="clearfix"></div>
+
+    <%= f.label :name, "Ad Condition <span>*</span>".html_safe %>
+    <%= f.select :condition, options_for_select([["New", "New"], ["Fairly Used", "Fairly Used"], ["Old", "Old"]]) %>
+    <div class="clearfix"></div>
+
+    <%= f.label :price, "Ad Price<span>*</span>".html_safe %>
+    <%= f.number_field :price %>
+    <div class="clearfix"></div>
+
+    <%= f.label :state_id, "Ad Location<span>*</span>".html_safe %>
+    <%= f.collection_select :state_id, State.all, :id, :title, prompt: "Select State" %>
+    <div class="clearfix"></div>
+    
+    <div class="upload-ad-photos">
+        <label>Photos for your ad :</label>
+        <div class="photos-upload-view">
+            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+            <div>
+                <%= f.fields_for :product_images, wrapper:false do |image| %>
+                  <%= render 'images', f: image %>
+                <% end %>
+            </div>
+
+            <%= f.link_to_add :product_images, class: "add-link" do %>
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Image
+            <% end %>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="upload-ad-photos">
+        <label>Trade Type<span>*</span> :</label>
+        <%= f.check_box :barter %><span>Do you want to trade this product by Barter?</span>
+        <div class="clearfix"></div>
+    </div>
+    
+    <div class="personal-details">
+        <p class="post-terms">By clicking <strong>post Button</strong> you accept our <a href="<%= terms_path %>" target="_blank">Terms of Use </a> and <a href="<%= privacy_policy_path %>" target="_blank">Privacy Policy</a></p>
+                            <input type="submit" value="Post">
+                            <div class="clearfix"></div>
+    </div>
+<% end %>

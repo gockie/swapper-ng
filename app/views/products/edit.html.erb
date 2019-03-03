@@ -1,0 +1,18 @@
+<%= render "layouts/header" %>
+    <div class="banner text-center">
+        <div class="container">
+            <h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Swapper</h1>
+            <p>Nigeria's number one trade by barter platform</p>
+        </div>
+    </div>
+    <!-- Submit Ad -->
+    <div class="submit-ad main-grid-border">
+        <div class="container">
+            <h2 class="head">Editing Product</h2>
+            <div class="post-ad-form">
+            	<%= render 'form', product: @product %>
+            </div>
+        </div>
+    </div>
+    <!-- // Submit Ad -->
+<%= render "layouts/footer" %>

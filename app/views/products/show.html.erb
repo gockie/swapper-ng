@@ -1,0 +1,128 @@
+<style type="text/css">
+    .redBox {
+        background: green;
+        width: 100%;
+        height: 50px;
+        z-index: 1000;
+        text-align: center;
+        padding: 13px 0px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+</style>
+
+
+<%= render "layouts/header" %>
+    <div class="banner text-center">
+        <div class="container">
+            <h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Swapper</h1>
+            <p>Nigeria's number one trade by barter platform</p>
+            <a href="<%= new_product_path %>">Post Free Ad</a>
+        </div>
+    </div>
+    <!--single-page-->
+    <% if flash[:notice] %>
+    <div class="redBox">
+        <%= flash[:notice] %>
+    </div>
+    <% end %>
+    <div class="single-page main-grid-border">
+        <div class="container">
+            <ol class="breadcrumb" style="margin-bottom: 5px;">
+                <li><a href="<%= root_url %>">Home</a></li>
+                <li><a href="<%= products_path %>">All Ads</a> </li>
+                <li class="active"><%= link_to @product.category.title, @product.category %></li>
+                <li class="active"><%= @product.name %></li>
+            </ol>
+            <div class="product-desc">
+                <div class="col-md-7 product-view white">
+                    <h2><%= @product.name %></h2>
+                    <p> <i class="glyphicon glyphicon-map-marker"></i><%= link_to @product.state.title, @product.state %>| Added <%= time_ago_in_words(@product.created_at) %> ago, Ad ID: <%= @product.swap_id %></p>
+                    <% if @product.product_images %>
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <% @product.product_images.each do |image| %>
+                            <li data-thumb="<%= image.image_url(:slide) %>">
+                                <%= image_tag image.image_url(:slide) %>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <% end %>
+                    <!-- FlexSlider -->
+                    <script defer src="/assets/jquery.flexslider.js"></script>
+                    <link rel="stylesheet" href="/assets/flexslider.css" type="text/css" media="screen" />
+                    <script>
+                    // Can also be used with $(document).ready()
+                    $(window).load(function() {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
+                    </script>
+
+                    <style type="text/css">
+                        .boost{
+                            background: #f44804;
+                            padding: 10px;
+                            color: #ffffff;
+                            border-radius:10px;
+                            text-decoration: none;
+                        }
+                        .boost:hover{
+                            background: #F55000;
+                            text-decoration:none;
+                        }
+                    </style>
+                    <!-- //FlexSlider -->
+                    <div class="product-details">
+                        <h4>Seller : <a href="#0"><%= @product.user.username || @product.user.first_name+@product.user.last_name %></a></h4>
+                        <h4>Views : <strong><%= pluralize(@product.view_count, "view") %></strong></h4>
+                        <p><strong>Description</strong> : <%= @product.description %></p>
+                        <% if @product.user == current_user %>
+                        <p><a href="<%= new_boost_path(product: @product.name) %>" class="boost" style="color:#fff">Boost Post</a></p>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="col-md-5 product-details-grid">
+                    <div class="item-price white">
+                        <div class="product-price">
+                            <p class="p-price">Price</p>
+                            <h3 class="rate">&#8358; <%= number_to_currency(@product.price, unit: "", precision: 0) %></h3>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="condition">
+                            <p class="p-price">Condition</p>
+                            <h4><%= @product.condition %></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="itemtype">
+                            <p class="p-price">Item Type</p>
+                            <h4>Phones</h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="interested text-center">
+                        <h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
+                        <p><i class="fa fa-phone"></i><%= @product.user.phone %></p>
+                    </div>
+							
+					
+                    <div class="tips">
+                        <h4>Safety Tips for Buyers</h4>
+                        <ol>
+                            <li><a href="#0">Never pay before purchase.</a></li>
+                            <li><a href="#0">Try to meet at a safe,public location for both cash and especially barter trades.</a></li>
+                            <li><a href="#0">Check the item before you buy and exchange for it.</a></li>
+                            <li><a href="#0">Always ensure that a transport means is always available for the size,quantity and quality of a goods bought or bartered.</a></li>
+                            <li><a href="#0">Pay only after collecting and securing item.</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--//single-page-->
+    <%= render "layouts/footer" %>
