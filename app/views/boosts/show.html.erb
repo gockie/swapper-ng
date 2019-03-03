@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @boost.product_id %>
+</p>
+
+<p>
+  <strong>Boost type:</strong>
+  <%= @boost.boost_type %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @boost.paid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @boost.status %>
+</p>
+
+<%= link_to 'Edit', edit_boost_path(@boost) %> |
+<%= link_to 'Back', boosts_path %>

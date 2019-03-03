@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Boosts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Boost type</th>
+      <th>Paid</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boosts.each do |boost| %>
+      <tr>
+        <td><%= boost.product_id %></td>
+        <td><%= boost.boost_type %></td>
+        <td><%= boost.paid %></td>
+        <td><%= boost.status %></td>
+        <td><%= link_to 'Show', boost %></td>
+        <td><%= link_to 'Edit', edit_boost_path(boost) %></td>
+        <td><%= link_to 'Destroy', boost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boost', new_boost_path %>

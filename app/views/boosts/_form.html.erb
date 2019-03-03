@@ -1,0 +1,164 @@
+<% @product = Product.find_by_name(params[:product]) %>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<%= render "layouts/header" %>
+    <div class="banner text-center">
+        <div class="container">
+            <h1>Boost Post </h1>
+            <p>Select Boost Duration</p>
+            <a href="<%= product_path(@product) %>">Back to Ad</a>
+        </div>
+    </div>
+    <!--single-page-->
+    <div class="single-page main-grid-border">
+        <div class="container">
+            <div class="post-ad-form">
+              <%= form_for(boost) do |f| %>
+
+                <% if boost.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(boost.errors.count, "error") %> prohibited this boost from being saved:</h2>
+
+                    <ul>
+                    <% boost.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <%= f.hidden_field :product_id, value: @product.id %>
+
+                <label>Boost Duration <span>*</span></label>
+                <%= f.select(:boost_type, options_for_select([["Daily Boost: NGN200", "Day"], ["Weekly Boost: NGN1000", "Weekly"], ["Monthly Boost: NGN3500", "Monthly"]])) %>
+                <div class="clearfix"></div>
+
+                <%= f.hidden_field :paid, value: true %>
+                
+                <div class="personal-details">
+                                        <input type="submit" onclick="payWithPaystack()" value="Boost this Ad" class="booster">
+                                        <div class="clearfix"></div>
+                </div>
+            <div id="product_images_fields_blueprint" style="display: none" data-blueprint="
+                              <input type=&quot;file&quot; name=&quot;product[product_images_attributes][new_product_images][image]&quot; id=&quot;product_product_images_attributes_new_product_images_image&quot; /><input name=&quot;product[product_images_attributes][new_product_images][_destroy]&quot; type=&quot;hidden&quot; value=&quot;0&quot; /><input type=&quot;checkbox&quot; value=&quot;1&quot; name=&quot;product[product_images_attributes][new_product_images][_destroy]&quot; id=&quot;product_pro duct_images_attributes_new_product_images__destroy&quot; /><span>Remove</span>
+            <br>">
+              
+            </div>
+          <% end %>
+            </div>
+            <div class="product-desc">
+                <div class="col-md-7 product-view white">
+                    <h2><%= @product.name %></h2>
+                    <p> <i class="glyphicon glyphicon-map-marker"></i><%= link_to @product.state.title, @product.state %>| Added <%= time_ago_in_words(@product.created_at) %> ago, Ad ID: <%= @product.swap_id %></p>
+                    <% if @product.product_images %>
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <% @product.product_images.each do |image| %>
+                            <li data-thumb="<%= image.image_url(:slide) %>">
+                                <%= image_tag image.image_url(:slide) %>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <% end %>
+                    <!-- FlexSlider -->
+                    <script defer src="/assets/jquery.flexslider.js"></script>
+                    <link rel="stylesheet" href="/assets/flexslider.css" type="text/css" media="screen" />
+                    <script>
+                    // Can also be used with $(document).ready()
+                    $(window).load(function() {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
+                    </script>
+
+                    <style type="text/css">
+                        .boost{
+                            background: #f44804;
+                            padding: 10px;
+                            color: #ffffff;
+                            border-radius:10px;
+                            text-decoration: none;
+                        }
+                        .boost:hover{
+                            background: #F55000;
+                            text-decoration:none;
+                        }
+                    </style>
+                    <!-- //FlexSlider -->
+                    <div class="product-details">
+                        <h4>Seller : <a href="#0"><%= @product.user.username || @product.user.first_name+@product.user.last_name %></a></h4>
+                        <h4>Views : <strong><%= pluralize(@product.view_count, "view") %></strong></h4>
+                        <p><strong>Description</strong> : <%= @product.description %></p>
+                    </div>
+                </div>
+                <div class="col-md-5 product-details-grid">
+                    <div class="item-price white">
+                        <div class="product-price">
+                            <p class="p-price">Price</p>
+                            <h3 class="rate">&#8358; <%= number_to_currency(@product.price, unit: "", precision: 0) %></h3>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="condition">
+                            <p class="p-price">Condition</p>
+                            <h4><%= @product.condition %></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="itemtype">
+                            <p class="p-price">Item Type</p>
+                            <h4>Phones</h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--//single-page-->
+    <%= render "layouts/footer" %>
+
+<script>
+  var boostAmount
+  $(".booster").click(function(event){
+      event.preventDefault();
+  });
+
+  function payWithPaystack(){
+    var boostAmount;
+    boostDuration = document.getElementById('boost_boost_type').value;
+
+    if (boostDuration === "Day"){
+      boostAmount = 20000
+    } else if (boostDuration === "Weekly"){
+      boostAmount = 100000
+    } else if (boostDuration === "Monthly") {
+      boostAmount = 350000
+    };
+
+    var handler = PaystackPop.setup({
+      key: 'pk_live_1becbb30ac18b981c6165d1df09088a4e61a7524',
+      email: "<%= current_user.email %>",
+      amount: boostAmount,
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: "+2348012345678"
+            }
+         ]
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+          $("#new_boost").submit()
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
