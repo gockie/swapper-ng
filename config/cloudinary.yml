@@ -1,0 +1,12 @@
+development:
+  cloud_name: swapper-ng
+  api_key: '335558231643593'
+  api_secret: gHo2FmN1-kEtGRh_eZNQ2bdRhUs
+  enhance_image_tag: true
+  static_image_support: true
+production:
+  cloud_name: swapper-ng
+  api_key: '335558231643593'
+  api_secret: gHo2FmN1-kEtGRh_eZNQ2bdRhUs
+  enhance_image_tag: true
+  static_image_support: true
