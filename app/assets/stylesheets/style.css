@@ -73,7 +73,7 @@ label{
 	text-decoration: none;
     color: #fff;
     font-size: 17px;
-    background-color: #ff6fc2d5;
+    background-color: #20a727;
     padding: 10px 20px;
 }
 .banner a:hover {
@@ -204,7 +204,7 @@ li.dropdown-header {
 	text-decoration:none;
 }
 .logo a span {
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 a.account {
     float: left;
@@ -216,7 +216,7 @@ a.account {
     text-decoration: none;
 }
 a.account:hover {
-	background-color: #ff6fc2d5;
+	background-color: #20a727;
 }
 span.active.uls-trigger {
     float: left;
@@ -451,7 +451,7 @@ i.real-estate {
 }
 .new_people h2{
 	font-size:2em;
-	color:#ff6fc2d5;
+	color:#20a727;
 	margin:0;
 }
 .new_people p{
@@ -469,8 +469,8 @@ i.real-estate {
 }
 .new_people a:hover{
 	color:#FFF;
-	border:1px solid #ff6fc2d5;
-	background:#ff6fc2d5;
+	border:1px solid #20a727;
+	background:#20a727;
 }
 .sign-in-form-top{
 	display: block;
@@ -653,7 +653,7 @@ span.checkbox2 {
     margin: 0.5em 0 0 27.5%;
 }
 .sign-in-form input[type="submit"]:hover {
-	 background:#ff6fc2d5;
+	 background:#20a727;
 	 transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
@@ -678,7 +678,7 @@ span.checkbox2 {
 .sign-up h1 {
     text-align: center;
     font-size: 2em;
-    color:#ff6fc2d5;
+    color:#20a727;
     margin: 0 0 0.5em;
 }
 p.creating{
@@ -745,7 +745,7 @@ p.creating{
     -ms-transition: .5s all;
 	}
 .sign-up input[type="submit"]:hover{
-	background:#ff6fc2d5;
+	background:#20a727;
 	color:#fff;
 	}
 .sub_home {
@@ -765,7 +765,7 @@ p.creating{
 }
 .sub_home_right p a{
 	text-decoration:underline;
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 .sub_home_right p a:hover{
 	color:#999;
@@ -856,7 +856,7 @@ ul#flexiselDemo3.nbs-flexisel-nav-left, ul#flexiselDemo3.nbs-flexisel-nav-right 
     margin: 0 auto;
 }
 .trend-ads h2 {
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 40px;
     margin-bottom: 35px;
     text-align: center;
@@ -874,7 +874,7 @@ ul#flexiselDemo3.nbs-flexisel-nav-left, ul#flexiselDemo3.nbs-flexisel-nav-right 
 	-ms-transition:0.5s all;
 }
 .biseller-column:hover div.ad-info h5 {
-	color:#ff6fc2d5;
+	color:#20a727;
     transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -908,7 +908,7 @@ span.price {
 	-ms-transition:0.5s all;
 }
 .biseller-column:hover span.price{
-	background: #ff6fc2d5;
+	background: #20a727;
     transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -1063,7 +1063,7 @@ ul.location li:nth-child(2) {
 	margin-top:0;
 }
 .copyrights p a,.diff p a {
-	color:#ff6fc2d5;
+	color:#20a727;
 	margin-left:2px;
 }
 .copyrights p a:hover,.diff p a:hover {
@@ -1154,7 +1154,7 @@ ul.location li:nth-child(2) {
     text-decoration: none;
 }
 .footer-logo a span {
-    color: #ff6fc2d5;
+    color: #20a727;
 }
 .footer-logo a {
 	position:relative;
@@ -1200,7 +1200,7 @@ ul.resp-tabs-list.hor_1 {
 }
 ul.resp-tabs-list.hor_1 a {
     text-decoration: none;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 15px;
     margin: 25px 0 0 0;
     display: block;
@@ -1256,7 +1256,7 @@ span.total strong {
 	margin:10px 0;
 }
 .category-info a {
-    color: #ff6fc2d5;
+    color: #20a727;
 	text-decoration:none;
     font-size: 14px;
 }
@@ -1300,7 +1300,7 @@ span.total strong {
     text-transform: capitalize;
 }
 .sun-regions ul li a:hover {
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 .region-block {
     padding: 40px 0px;
@@ -1313,7 +1313,7 @@ span.total strong {
     border-bottom: 3px solid #F4F4F4;
 }
 h2.head {
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 35px;
     margin: 35px 0;
 }
@@ -1437,7 +1437,7 @@ a.tag20 {
     text-transform: capitalize;
 }
 .popular-regions ul li a:hover {
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 h4.mpcwc {
 	margin-top:40px;
@@ -1461,7 +1461,7 @@ h4.mpcwc {
     margin: 0 0 5px 0;
 }
 .popular-category ul li a:hover {
-    color: #ff6fc2d5;
+    color: #20a727;
 }
 .popular-category {
     width: 20%;
@@ -1490,7 +1490,7 @@ h4.mpcwc {
     text-transform: capitalize;
 }
 .sitemap-regions ul li a:hover {
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 .sitemap-regions ul li.left-gap {
 	margin:-2px 0 0 15px;
@@ -1586,7 +1586,7 @@ ul.all-cat-list li a:hover {
 }
 .all-categories h3 {
     margin: 0 0 15px 15px;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 25px;
 }
 /*-- //All-classifieds --*/
@@ -1631,7 +1631,7 @@ ul.all-cat-list li a:hover {
 }
 .app-bottom-grid h3 {
 	font-size: 28px;
-    color: #ff6fc2d5;
+    color: #20a727;
     margin: 30px 0 0px 0;
 }
 .app-bottom-grid p {
@@ -1720,7 +1720,7 @@ a.work {
 	color: #fff;
     font-size: 14px;
     text-decoration: none;
-    background: #ff6fc2d5;
+    background: #20a727;
     text-transform: uppercase;
     font-weight: 400;
     padding: 11px 23px;
@@ -1937,12 +1937,12 @@ form .field input[type="text"]:focus + label, form .field input[type="text"].foc
 form .field textarea:focus + label,
 form .field textarea.focused + label {
   width: 18%;
-  background: #ff6fc2d5;
+  background: #20a727;
   color: #fff;
 }
 form .field input[type="text"].focused + label,
 form .field textarea.focused + label {
-  color: #ff6fc2d5;
+  color: #20a727;
 }
 form .field:hover label {
   width: 20%;
@@ -1950,7 +1950,7 @@ form .field:hover label {
   color: white;
 }
 form.submit input[type="submit"] {
-    background: #ff6fc2d5;
+    background: #20a727;
     color: white;
     -webkit-appearance: none;
     border: none;
@@ -2000,7 +2000,7 @@ form input[type="submit"]:focus {
 }
 
 #drop a:hover{
-    background-color:#ff6fc2d5;
+    background-color:#20a727;
 }
 
 #drop input{
@@ -2107,7 +2107,7 @@ form.submit {
 }
 .product-view p i {
     margin-right: 4px;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 14px;
 }
 .product-view p a {
@@ -2124,7 +2124,7 @@ form.submit {
 	margin:15px 0;
 }
 .product-details h4 a {
-	color:#ff6fc2d5;
+	color:#20a727;
 	font-size:15.5px;
 	text-decoration:none;
 }
@@ -2172,7 +2172,7 @@ p.p-price {
 }
 h3.rate {
     float: left;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 30px;
 }
 .condition h4,.itemtype h4 {
@@ -2425,7 +2425,7 @@ border-bottom: 1px solid #e5e3db;
 }
 h2.sear-head.fer {
     text-align: center;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-size: 26px;
 	    margin-bottom: 20px;
 }
@@ -2435,7 +2435,7 @@ h2.sear-head.fer {
     color: #000;
 }
 .featured-ad-right h4:hover {
-	color: #ff6fc2d5;
+	color: #20a727;
 }
 .featured-ad-right p {
     color: red;
@@ -2589,7 +2589,7 @@ h2.sear-head.fer {
     margin-bottom: -1px!important;
     border-top: 1px solid;
     border: 1px solid #CCCCCC !important;
-    border-top: 4px solid #ff6fc2d5 !important;
+    border-top: 4px solid #20a727 !important;
     border-bottom: 1px #FFF solid !important;
     background-color: #fff!important;
 	margin: 0;
@@ -2739,7 +2739,7 @@ span.cityname{
     word-wrap: break-word;
     font-size: 17px;
     text-decoration: none;
-    color: #ff6fc2d5;
+    color: #20a727;
     font-weight: 700;
 }
 
@@ -2806,10 +2806,10 @@ div#viewcontrols label {
 	cursor:pointer;
 }
 #viewcontrols a:hover{
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 #viewcontrols .active{
-	color:#ff6fc2d5;
+	color:#20a727;
 }
 
 /* MISCELLANEOUS */
@@ -2925,7 +2925,7 @@ section.list-right span.price:after {
     text-transform: uppercase;
     padding: 8px 18px;
     border: none;
-    background-color: #ff6fc2d5;
+    background-color: #20a727;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
@@ -3035,7 +3035,7 @@ ul.privacy-start {
     color: #555;
 }
 .post-ad-form input[type="text"]:hover,.post-ad-form textarea:hover, .post-ad-form input[type="number"]:hover {
-    border: 1px solid #ff6fc2d5;
+    border: 1px solid #20a727;
     transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -3050,7 +3050,7 @@ ul.privacy-start {
     margin-bottom: 25px;
 }
 .post-ad-form input[type="submit"] {
-    background: #ff6fc2d5;
+    background: #20a727;
     color: white;
     -webkit-appearance: none;
     border: none;
@@ -3082,8 +3082,8 @@ legend
     text-align: center;
     padding: 25px 0;
     margin: 25px 0;
-    color: #ff6fc2d5;
-    border: 2px dashed #ff6fc2d5;
+    color: #20a727;
+    border: 2px dashed #20a727;
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
