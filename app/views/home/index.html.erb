@@ -8,6 +8,87 @@
     </div>
     <!-- content-starts-here -->
     <div class="content">
+	 <div class="trending-ads">
+            <div class="container white">
+                <!-- slider -->
+                <div class="trend-ads">
+                    <h2>Trending Ads</h2>
+                    <ul id="flexiselDemo3">
+                        <li>
+                            <% Product.limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                        <li>
+                            <% Product.offset(4).limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                        <li>
+                            <% Product.offset(8).limit(4).each do |product| %>
+                            <div class="col-md-3 biseller-column">
+                                <a href="<%= product_path(product) %>">
+                                            <%= image_tag product.product_images.first.image_url(:slide) %>
+                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
+                                        </a>
+                                <div class="ad-info">
+                                    <h5><%= product.name %></h5>
+                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
+                                </div>
+                            </div>
+                            <% end %>
+                        </li>
+                    </ul>
+                    <script type="text/javascript">
+                    $(window).load(function() {
+                        $("#flexiselDemo3").flexisel({
+                            visibleItems: 1,
+                            animationSpeed: 1000,
+                            autoPlay: true,
+                            autoPlaySpeed: 5000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                                portrait: {
+                                    changePoint: 480,
+                                    visibleItems: 1
+                                },
+                                landscape: {
+                                    changePoint: 640,
+                                    visibleItems: 1
+                                },
+                                tablet: {
+                                    changePoint: 768,
+                                    visibleItems: 1
+                                }
+                            }
+                        });
+
+                    });
+                    </script>
+                    <script type="text/javascript" src="/assets/jquery.flexisel.js"></script>
+                </div>
+            </div>
+            <!-- //slider -->
+        </div>
         <div class="categories">
             <div class="container white">
                 <div class="col-md-2 focus-grid">
@@ -132,87 +213,6 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-        </div>
-        <div class="trending-ads">
-            <div class="container white">
-                <!-- slider -->
-                <div class="trend-ads">
-                    <h2>Trending Ads</h2>
-                    <ul id="flexiselDemo3">
-                        <li>
-                            <% Product.limit(4).each do |product| %>
-                            <div class="col-md-3 biseller-column">
-                                <a href="<%= product_path(product) %>">
-                                            <%= image_tag product.product_images.first.image_url(:slide) %>
-                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
-                                        </a>
-                                <div class="ad-info">
-                                    <h5><%= product.name %></h5>
-                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
-                                </div>
-                            </div>
-                            <% end %>
-                        </li>
-                        <li>
-                            <% Product.offset(4).limit(4).each do |product| %>
-                            <div class="col-md-3 biseller-column">
-                                <a href="<%= product_path(product) %>">
-                                            <%= image_tag product.product_images.first.image_url(:slide) %>
-                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
-                                        </a>
-                                <div class="ad-info">
-                                    <h5><%= product.name %></h5>
-                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
-                                </div>
-                            </div>
-                            <% end %>
-                        </li>
-                        <li>
-                            <% Product.offset(8).limit(4).each do |product| %>
-                            <div class="col-md-3 biseller-column">
-                                <a href="<%= product_path(product) %>">
-                                            <%= image_tag product.product_images.first.image_url(:slide) %>
-                                            <span class="price">&#8358; <%= number_to_currency(product.price, unit: "", precision: 0) %></span>
-                                        </a>
-                                <div class="ad-info">
-                                    <h5><%= product.name %></h5>
-                                    <span><%= time_ago_in_words(product.created_at) %> ago</span>
-                                </div>
-                            </div>
-                            <% end %>
-                        </li>
-                    </ul>
-                    <script type="text/javascript">
-                    $(window).load(function() {
-                        $("#flexiselDemo3").flexisel({
-                            visibleItems: 1,
-                            animationSpeed: 1000,
-                            autoPlay: true,
-                            autoPlaySpeed: 5000,
-                            pauseOnHover: true,
-                            enableResponsiveBreakpoints: true,
-                            responsiveBreakpoints: {
-                                portrait: {
-                                    changePoint: 480,
-                                    visibleItems: 1
-                                },
-                                landscape: {
-                                    changePoint: 640,
-                                    visibleItems: 1
-                                },
-                                tablet: {
-                                    changePoint: 768,
-                                    visibleItems: 1
-                                }
-                            }
-                        });
-
-                    });
-                    </script>
-                    <script type="text/javascript" src="/assets/jquery.flexisel.js"></script>
-                </div>
-            </div>
-            <!-- //slider -->
         </div>
         <div class="mobile-app">
             <div class="container">
