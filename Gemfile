@@ -154,5 +154,3 @@ gem 'pundit'
 
 gem 'arctic_admin'
 
-gem 'bootstrap-sass'
-
