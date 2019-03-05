@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 body{
 	padding:0;
 	font-family: 'Open Sans', sans-serif;
-	background-image: asset_path(/assets/images/bg.jpg) no-repeat;
+	background:url(/assets/images/bg.jpg) no-repeat;
 	background-position: bottom left;
 	background-attachment: fixed;
 }
@@ -49,13 +49,13 @@ label{
 	margin:0;
 }
 .banner {
-	background-image: asset_path('../assets/images/barter.jpg') no-repeat 0px 0px;
+	background:url('../assets/images/barter.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:240px;
 	padding:45px 0 0 0;
 }
 .main-banner {
-	background-image: asset_path('../assets/images/barter.jpg') no-repeat 0px 0px;
+	background:url('../assets/images/barter.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:400px;
 	padding:100px 0 0 0;
@@ -1076,7 +1076,7 @@ ul.location li:nth-child(2) {
 .footer-social-icons ul li a{
 	width:30px;
 	height:30px;
-	background-image: asset_path('/assets/images/img-sprite.png') no-repeat 0px 0px;
+	background:url('/assets/images/img-sprite.png') no-repeat 0px 0px;
 	display:inline-block;
 	position: relative;
 }
@@ -1643,25 +1643,25 @@ ul.all-cat-list li a:hover {
 .app-bottom-grid i.search {
 	width:60px;
 	height:60px;
-	background-image: asset_path('/assets/images/img-sprite.png') no-repeat -720px -60px;
+	background:url('/assets/images/img-sprite.png') no-repeat -720px -60px;
 	display:inline-block;
 }
 .app-bottom-grid i.notifications{
 	width:60px;
 	height:60px;
-	background-image: asset_path('/assets/images/img-sprite.png') no-repeat -780px -60px;
+	background:url('/assets/images/img-sprite.png') no-repeat -780px -60px;
 	display:inline-block;
 }
 .app-bottom-grid i.addads{
 	width:60px;
 	height:60px;
-	background-image: asset_path('/assets/images/img-sprite.png') no-repeat -840px -60px;
+	background:url('/assets/images/img-sprite.png') no-repeat -840px -60px;
 	display:inline-block;
 }
 .app-bottom-grid i.getreply{
 	width:60px;
 	height:60px;
-	background-image: asset_path('/assets/images/img-sprite.png') no-repeat -900px -60px;
+	background:url('/assets/images/img-sprite.png') no-repeat -900px -60px;
 	display:inline-block;
 }
 .app-bottom-grid {
