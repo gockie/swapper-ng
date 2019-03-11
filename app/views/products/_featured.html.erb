@@ -1,29 +1,19 @@
 <div class="side-bar col-md-3">
     <div class="featured-ads">
         <h2 class="sear-head fer">Featured Ads</h2>
-        <div class="featured-ad">
-            <a href="#">
-                <div class="featured-ad-left">
-                    <%= image_tag "f1.jpg", style: "" %>
-                </div>
-                <div class="clearfix"></div>
+       <div id="sliderFrame" class="featured-ad">
+        <div id="slider" class="featured-ad-left">
+            <a href="http://wwwswapper.com.ng">
+                <%= image_tag "f1.jpg", style: "" alt: "ads"%>
             </a>
+            <%= image_tag "f1.jpg", style: "" %>
+            <%= image_tag "f2.jpg", style: "" %>
+            <%= image_tag "f3.jpg", style: "" alt: "google"%>
         </div>
-        <div class="featured-ad">
-            <a href="#">
-                <div class="featured-ad-left">
-                    <%= image_tag "f2.jpg", style: "" %>
-                </div>
-                <div class="clearfix"></div>
-            </a>
-        </div>
-        <div class="featured-ad">
-            <a href="#">
-                <div class="featured-ad-left">
-                    <%= image_tag "f3.jpg", style: "" %>
-                </div>
-                <div class="clearfix"></div>
-            </a>
+        <div id="google" style="display: none;">
+            <em>HTML</em> caption. Link to <a href="http://www.google.com/">Google</a>.
         </div>
     </div>
+    </div>
 </div>
+    
