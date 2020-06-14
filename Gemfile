@@ -24,7 +24,7 @@ gem 'rails', '~> 5.0.4'
 
 # Use Puma as the app server
 
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 
 # Use SCSS for stylesheets
 
