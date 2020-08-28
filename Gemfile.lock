@@ -318,4 +318,3 @@ RUBY VERSION
 
 BUNDLED WITH
    1.15.4
-gem 'sprockets', '~>3.7.2'
