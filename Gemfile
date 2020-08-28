@@ -153,5 +153,3 @@ gem 'draper'
 gem 'pundit'
 
 gem 'arctic_admin'
-
-gem 'sprockets', '~>3.7.2'
